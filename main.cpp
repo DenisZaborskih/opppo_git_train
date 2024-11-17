@@ -1,7 +1,10 @@
-
-double my_pow(double base, unsigned int exponent) {
-    double result = base;
-    for (unsigned int i = 1; i < exponent; ++i) {
+double my_pow(double base, int exponent) {
+    if (exponent < 0) {
+        base = 1 / base;
+        exponent = -exponent;
+    }
+    double result = 1.0;
+    for (int i = 0; i < exponent; ++i) {
         result *= base;
     }
     return result;
